@@ -6,3 +6,10 @@
     box-shadow: 0 2px 5px #ccc;
     background-color: lightblue;
 }
+
+@media (min-width: 992px) {
+    .NewBlogCard {
+        width: 45%;
+        display: inline-block;
+    }
+}
