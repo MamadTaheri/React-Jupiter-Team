@@ -27,7 +27,12 @@ function App() {
   const blogCards = blogArray.map((item, pos) => {
 
     return (
-      <BlogCard key={pos} />
+      <BlogCard 
+        key={pos} 
+        title={item.title} 
+        description={item.description}
+        id={item.id} 
+      />
       // <div className="BlogCard" key={item.id}>
       //    <h3>{item.title}</h3>
       //    <p>{item.description}</p> 
