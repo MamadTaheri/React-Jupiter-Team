@@ -1,4 +1,7 @@
-import logo from './logo.svg';
+import React from 'react'
+
+import BlogCard from './BlogCard'
+
 import './App.css'
 
 function App() {
@@ -22,13 +25,13 @@ function App() {
   ] 
 
   const blogCards = blogArray.map((item, pos) => {
-    console.log(item)
 
     return (
-      <div className="BlogCard" key={item.id}>
-         <h3>{item.title}</h3>
-         <p>{item.description}</p> 
-      </div> 
+      <BlogCard key={pos} />
+      // <div className="BlogCard" key={item.id}>
+      //    <h3>{item.title}</h3>
+      //    <p>{item.description}</p> 
+      // </div> 
     )
 
   })
