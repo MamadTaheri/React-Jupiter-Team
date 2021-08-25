@@ -1,6 +1,7 @@
 import React from 'react'
 
-import BlogCard from './BlogCard'
+import BlogHomePageCard from './BlogCard'
+import { isArrayEmpty as isMyArrayEmpty } from './Utils'
 
 import './App.css'
 
@@ -24,10 +25,10 @@ function App() {
     }
   ] 
 
-  const blogCards = blogArray.map((item, pos) => {
+  const blogCards = isMyArrayEmpty(blogArray) ? [] : blogArray.map((item, pos) => {
 
     return (
-      <BlogCard 
+      <BlogHomePageCard 
         key={pos} 
         title={item.title} 
         description={item.description}
