@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import BlogHomePageCard from './BlogCard'
 import { isArrayEmpty as isMyArrayEmpty } from './Utils'
@@ -14,19 +14,26 @@ class App extends React.Component {
     {
       id: 1,
       title: 'Blog Title 1',
-      description: 'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor '
+      description: 'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor ',
+      likeCount: 0,
     },
     {
       id: 2,
       title: 'Blog Title 2',
-      description: 'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor '
+      description: 'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor ',
+      likeCount: 0,
     },
     {
       id: 3,
       title: 'Blog Title 3',
-      description: 'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor '
+      description: 'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor ',
+      likeCount: 0,
     }
   ]  
+
+  onLikeBtnClick = () => {
+    alert('like btn clicked')
+  }
 
    blogCards = isMyArrayEmpty(this.blogArray) ? [] : this.blogArray.map((item, pos) => {
 
@@ -36,6 +43,8 @@ class App extends React.Component {
         title={item.title} 
         description={item.description}
         id={item.id} 
+        likeCount={item.likeCount}
+        onLikeBtnClick={this.onLikeBtnClick}
       />
       // <div className="BlogCard" key={item.id}>
       //    <h3>{item.title}</h3>
@@ -43,7 +52,7 @@ class App extends React.Component {
       // </div> 
     ) 
   })
-
+  
    onHideBtnClick = () => {
     //  let updatedState = !this.state.showBlogs
     this.setState((prevState, prevProps) => {
