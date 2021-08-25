@@ -5,9 +5,12 @@ import { isArrayEmpty as isMyArrayEmpty } from './Utils'
 
 import './App.css'
 
-function App() {
+class App extends React.Component {
+  state = {
+    showBlogs: true
+  }
 
-  const blogArray = [
+   blogArray = [
     {
       id: 1,
       title: 'Blog Title 1',
@@ -23,9 +26,9 @@ function App() {
       title: 'Blog Title 3',
       description: 'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor '
     }
-  ] 
+  ]  
 
-  const blogCards = isMyArrayEmpty(blogArray) ? [] : blogArray.map((item, pos) => {
+   blogCards = isMyArrayEmpty(this.blogArray) ? [] : this.blogArray.map((item, pos) => {
 
     return (
       <BlogHomePageCard 
@@ -38,15 +41,26 @@ function App() {
       //    <h3>{item.title}</h3>
       //    <p>{item.description}</p> 
       // </div> 
-    )
-
+    ) 
   })
 
-  return (
-    <div className="App">
-      {blogCards}
+   onHideBtnClick = () => {
+    this.setState({showBlogs: false})
+
+    console.log(this.state.showBlogs)
+  }
+
+  render() {
+    return(
+      <div className="App">
+      <button onClick ={this.onHideBtnClick}>Hide List</button>
+      <br/>
+      {
+        this.state.showBlogs ? this.blogCards : null
+      }
     </div>
-  );
+    )
+  } 
 }
 
 export default App;
