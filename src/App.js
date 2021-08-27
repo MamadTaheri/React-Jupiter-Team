@@ -5,22 +5,26 @@ import ProductDetails from "./ProductDetails";
 import ProductPreview from "./ProductPreview";
 import Topbar from "./Topbar";
 
-function App() {  
-  return (
-    <div className="App">
+class App extends Component {
+  
+  render() {
+    return (
+      <div className="App">
         <Topbar />
-
-      <div className={classes.MainContainer}>
-        <div className={classes.ProductPreview}>
-            <ProductPreview />
-        </div>
-
-        <div className={classes.ProductData}>
-            <ProductDetails />
+  
+        <div className={classes.MainContainer}>
+          <div className={classes.ProductPreview}>
+              <ProductPreview />
+          </div>
+  
+          <div className={classes.ProductData}>
+              <ProductDetails />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+
 }
 
 export default App;
