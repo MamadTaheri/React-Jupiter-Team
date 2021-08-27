@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 import classes from "./App.module.css";
-import ProductData from "./ProductData";
-import ProductDetails from "./ProductDetails";
-import ProductPreview from "./ProductPreview";
-import Topbar from "./Topbar";
+import ProductData from "./Utils/ProductData";
+import ProductDetails from "./ProductDetails/ProductDetails";
+import ProductPreview from "./ProductPreview/ProductPreview";
+import Topbar from "./Topbar/Topbar";
 
 class App extends Component {
   state = {
