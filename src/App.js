@@ -9,8 +9,16 @@ import Topbar from "./Topbar/Topbar";
 class App extends Component {
   state = {
     productData: ProductData,
-    currentPreviewImage: 'https://imgur.com/xSIK4M8.png',
-    showHeartBeatSection: false
+    currentPreviewImagePos: 0,
+    currentSelectedFeature: 0,
+  }
+
+  onColorOptionClick = (pos) => {
+    this.setState({currentPreviewImagePos: pos})
+  }
+
+  onFeatureItemClick = (pos) => {
+     this.setState({currentSelectedFeature: pos})
   }
   
   render() {
@@ -21,12 +29,17 @@ class App extends Component {
         <div className={classes.MainContainer}>
           <div className={classes.ProductPreview}>
               <ProductPreview 
-              currentPreviewImage={this.state.currentPreviewImage}
-              showHeartBeatSection={this.state.showHeartBeatSection} />
+              currentPreviewImage={this.state.productData.colorOptions[this.state.currentPreviewImagePos].imageUrl}
+              currentSelectedFeature={this.state.currentSelectedFeature} />
           </div>
   
           <div className={classes.ProductData}>
-              <ProductDetails data={this.state.productData} />
+              <ProductDetails 
+              data={this.state.productData} 
+              onColorOptionClick={this.onColorOptionClick}
+              currentPreviewImagePos={this.state.currentPreviewImagePos}
+              onFeatureItemClick={this.onFeatureItemClick}
+              currentSelectedFeature={this.state.currentSelectedFeature} />
           </div>
         </div>
       </div>
