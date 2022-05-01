@@ -1,4 +1,4 @@
-/* بیضی ک توش دایره هست کلا */
+
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -10,7 +10,6 @@
 .toggle-switch input[type="checkbox"] {
   display: none;
 }
-/* بیضی  ک توش دایره هس وقتی ک غیرفعال */
 .toggle-switch .switch {
   position: absolute;
   cursor: pointer;
@@ -22,7 +21,6 @@
   left: 0;
   transition: background-color 0.2s ease;
 }
-/* دایره ی داخل بیضی غیرفعال */
 .toggle-switch .switch::before {
   position: absolute;
   content: "";
@@ -34,17 +32,14 @@
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
-/* دایره ی داخل بیضی فعال بشه تا کجای بیضی بره */
 .toggle-switch input[type="checkbox"]:checked + .switch::before {
   transform: translateX(25px);
-  /* background-color: #fff; */
  
 } 
-/* بیضی  ک توش دایره هس وقتی ک فعال */
 .toggle-switch input[type="checkbox"]:checked + .switch {
   background-color: #15d6bc;
 }
-/* نوشته ی زیر سوییچ ک حالتشو نشون میده */
+
 .txt-switch-active{
   color: #15d6bc;
   font-size: 15px;
@@ -53,7 +48,7 @@
   color: rgb(235, 79, 79);
   font-size: 15px;
 }
-/*  کل صفحه ام */
+
 .content-switch{
  
    text-align: center;
