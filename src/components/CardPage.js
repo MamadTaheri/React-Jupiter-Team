@@ -19,10 +19,7 @@ const CardPage = () => {
 
   const handleClick = (e) => {};
 
-  /**
-   * in useEffect by axios we get data from api service and
-   * we store the mapped data in state
-   */
+
   useEffect(() => {
     axios
       .get('')
