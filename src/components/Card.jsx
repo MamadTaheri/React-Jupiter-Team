@@ -13,10 +13,9 @@ const Card = ({ person }) => {
         <ToggleSwitch />
       </div>
       <label className="text-card">
-        {jobTitle.length <= 102
-          ? jobTitle
-          : `${jobTitle.substring(0, 102)} ...`}
+        {jobTitle}
       </label>
+      <Link to={`/staff/${id}`} className="btn btn-primary more-info-btn">More Info...</Link>
     </div>
   );
 };
