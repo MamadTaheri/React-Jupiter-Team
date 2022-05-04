@@ -1,9 +1,7 @@
 import React from "react";
-// import Card from './components/Card';
-// import CardPage from './components/CardPage';
-// import CardDetail from './components/CardDetail';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from "./Pages/HomeView";
+import NotFoundView from "./Pages/NotFoundView";
 import StaffDetailsView from "./Pages/StaffDetailsView";
 
 const App = () => {
@@ -12,7 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/staff/:id" element={<StaffDetailsView />} />
-        {/* <Route path={["/not-found", "*"]} component={NotFound} /> */}
+        <Route path="*" element={<NotFoundView />} />
       </Routes>
     </BrowserRouter>
   );
