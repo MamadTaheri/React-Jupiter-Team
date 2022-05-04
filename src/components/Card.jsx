@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import '../styles/Card.css';
 import ToggleSwitch from './ToggleSwitch';
 
 function Card({ text, title, onPress = () => { }, isActive = true }) {
     return (
-        <div onClick={onPress} className={isActive ? 'container-card' : 'container-card-inactive'}>
+        <Link to={`/cards/${title}`}> <div onClick={onPress} className={isActive ? 'container-card' : 'container-card-inactive'}>
             <div className='header-card'>
                 <label className='title-card'>{title}</label>
                 <ToggleSwitch />
@@ -12,6 +13,7 @@ function Card({ text, title, onPress = () => { }, isActive = true }) {
                 {text.length <= 102 ? text : `${text.substring(0, 102)} ...`}
             </label>
         </div>
+        </Link>
     );
 }
 
