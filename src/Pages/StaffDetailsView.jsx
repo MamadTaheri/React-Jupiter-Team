@@ -13,6 +13,7 @@ const StaffDetailsView = () => {
 
   useEffect(() => {
     GetStaffByIdService(id).then((response) => {
+      console.log(response);
       const [status, data] = response;
       setEmployee(data);
       setStatus(status);
@@ -23,9 +24,12 @@ const StaffDetailsView = () => {
     <div className="container">
       {status === "init" && <img src={spinner} alt="spinner" width={300} />}
       {status === ResponseStatuses.Error && (
-        <h1>Error On Loading Data... Please Call Admin</h1>
+        <h1 className="text-primary">Error On Loading Data... Please Call Admin</h1>
       )}
-      {status === ResponseStatuses.Success && (
+      {status === ResponseStatuses.Success && !employee && (
+        <h1 className="text-primary">User Not Found... Please Call Admin</h1>
+      )}
+      {status === ResponseStatuses.Success && employee && (
         <StaffDetails employee={employee} />
       )}
     </div>
