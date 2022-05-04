@@ -1,21 +1,35 @@
 import React from 'react';
 import Card from './components/Card';
+import CardPage from './components/CardPage';
+import CardDetail from './components/CardDetail';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+
 const App = () => {
   return (
+    <><Router>
+      <Routes>
+        <Route exact path="/" component={CardPage} />
+        <Route path="/cards/:title" component={CardDetail} />
+        <Route path={["/not-found", "*"]} component={NotFound} />
+      </Routes>
+    </Router>
     <div className='container'>
-      <Card
-        title="plugin1"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus mattis magna id suscipit." />
-      {/* <div className="card" style={{ width: "18rem" }}>
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" className="card-link">Card link</a>
-          <a href="#" className="card-link">Another link</a>
-        </div>
-      </div> */}
-    </div>
+        <Card
+          title="plugin1"
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus mattis magna id suscipit." />
+        {/* <div className="card" style={{ width: "18rem" }}>
+      <div className="card-body">
+        <h5 className="card-title">Card title</h5>
+        <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" className="card-link">Card link</a>
+        <a href="#" className="card-link">Another link</a>
+      </div>
+    </div> */}
+      </div>
+      </>
   );
 };
 export default App;
+
