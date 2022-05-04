@@ -3,12 +3,13 @@ import React from "react";
 // import CardPage from './components/CardPage';
 // import CardDetail from './components/CardDetail';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeView from "./Pages/HomeView";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route exact path="/" component={CardPage} /> */}
+        <Route path="/" element={<HomeView />} />
         {/* <Route path="/cards/:title" component={CardDetail} /> */}
         {/* <Route path={["/not-found", "*"]} component={NotFound} /> */}
       </Routes>
