@@ -4,13 +4,14 @@ import React from "react";
 // import CardDetail from './components/CardDetail';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from "./Pages/HomeView";
+import StaffDetailsView from "./Pages/StaffDetailsView";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeView />} />
-        {/* <Route path="/cards/:title" component={CardDetail} /> */}
+        <Route path="/staff/:id" element={<StaffDetailsView />} />
         {/* <Route path={["/not-found", "*"]} component={NotFound} /> */}
       </Routes>
     </BrowserRouter>
