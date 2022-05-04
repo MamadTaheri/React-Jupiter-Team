@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import GetStaffService from "../Services/GetStaffService";
 import ResponseStatuses from "../Services/ResponseStatuses";
 import spinner from "../assets/images/spinner.gif";
