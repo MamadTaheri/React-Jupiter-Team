@@ -4,6 +4,7 @@ import HomeView from "./Pages/HomeView";
 import NotFoundView from "./Pages/NotFoundView";
 import StaffDetailsView from "./Pages/StaffDetailsView";
 
+
 const App = () => {
   return (
     <BrowserRouter>
